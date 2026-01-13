@@ -1,0 +1,145 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Fond noir */
+body {
+    background-color: #000000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Animation de chargement */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: hideLoader 1.2s ease forwards;
+    animation-delay: 0.05s; /* ≈ 1% du chargement */
+    z-index: 1000;
+}
+
+.loader span {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes hideLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 60px;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Hero */
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.photo {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list span {
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.skills-list span:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #777;
+}
